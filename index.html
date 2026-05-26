@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Visual Compiler</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT -->
+    <div class="editor">
+
+        <div class="topbar">
+            <select id="lang">
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+                <option value="java">Java</option>
+                <option value="python">Python</option>
+            </select>
+
+            <button onclick="run()">▶ Run</button>
+        </div>
+
+        <!-- CODE AREA WITH LINE NUMBERS -->
+        <div class="code-area">
+            <div id="lines"></div>
+            <textarea id="code" oninput="updateLines()"></textarea>
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="phases">
+
+        <div class="box"><h3>Lexical</h3><div id="tokens"></div></div>
+        <div class="box"><h3>Syntax</h3><pre id="tree"></pre></div>
+        <div class="box"><h3>Semantic</h3><div id="semantic"></div></div>
+        <div class="box"><h3>Intermediate</h3><pre id="icg"></pre></div>
+        <div class="box"><h3>Optimization</h3><pre id="opt"></pre></div>
+        <div class="box"><h3>Code Generation</h3><pre id="final"></pre></div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
