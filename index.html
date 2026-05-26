@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-Time Visual Compiler</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app-container">
+      <header class="app-header">
+        <h1>Real-Time Visual Compiler</h1>
+        <p>Understand each compilation stage as your code is processed.</p>
+      </header>
+
+      <section class="editor-section card">
+        <div class="editor-toolbar">
+          <label for="language-select">Language</label>
+          <select id="language-select">
+            <option value="c-simple" selected>Simple C-like</option>
+          </select>
+          <div class="button-group">
+            <button id="run-btn" class="btn primary">Run</button>
+            <button id="clear-btn" class="btn secondary">Clear</button>
+          </div>
+        </div>
+
+        <div class="editor-wrapper">
+          <div id="line-numbers" class="line-numbers">1</div>
+          <textarea
+            id="code-input"
+            spellcheck="false"
+            placeholder="Example:&#10;int a = 2;&#10;int b = 3;&#10;int c;&#10;c = a + b * 4;"
+          ></textarea>
+        </div>
+      </section>
+
+      <section class="results-section card">
+        <nav class="tabs" id="tabs">
+          <button class="tab active" data-tab="tokens">Lexical Analysis</button>
+          <button class="tab" data-tab="syntax">Syntax Analysis</button>
+          <button class="tab" data-tab="semantic">Semantic Analysis</button>
+          <button class="tab" data-tab="intermediate">Intermediate Code</button>
+          <button class="tab" data-tab="optimization">Optimization</button>
+          <button class="tab" data-tab="machine">Final Code</button>
+        </nav>
+
+        <div class="tab-content">
+          <section id="panel-tokens" class="panel active"></section>
+          <section id="panel-syntax" class="panel"></section>
+          <section id="panel-semantic" class="panel"></section>
+          <section id="panel-intermediate" class="panel"></section>
+          <section id="panel-optimization" class="panel"></section>
+          <section id="panel-machine" class="panel"></section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
